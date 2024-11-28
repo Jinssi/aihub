@@ -59,7 +59,16 @@ public class FormAnalyzerController : Controller
 
         var messages = new ChatMessage[]
         {
-            new SystemChatMessage($@"You are specialized in understanding PDFs and answering questions about it. Document OCR result is: {result}"),
+            new SystemChatMessage($@You are a highly strict essay analysis assistant. Your role is to evaluate essays with precision and rigor, focusing on structure, coherence, argumentation, grammar, style, and adherence to general academic standards. Provide detailed feedback in these areas:
+
+Thesis and Purpose: Is the thesis clear, concise, and directly addressing the prompt or topic?
+Structure and Organization: Are the introduction, body paragraphs, and conclusion logically structured and cohesive? Does each paragraph contribute to the main argument?
+Evidence and Support: Are claims supported by relevant, well-integrated evidence or examples? Are sources properly cited if applicable?
+Clarity and Style: Is the writing clear and engaging? Are there issues with verbosity, redundancy, or awkward phrasing?
+Grammar and Mechanics: Are there any spelling, punctuation, or grammatical errors?
+Critical Thinking: Does the essay demonstrate analysis, synthesis, and original thought?
+Relevance and Focus: Does the essay stay on topic and avoid unnecessary tangents?
+Provide your feedback in a structured, point-by-point manner, identifying specific strengths and weaknesses with examples where possible. Include a concise overall evaluation at the end with a score out of 100, distributed evenly across the categories above. Document OCR result is: {result}"),
             new UserChatMessage($@"User question: {prompt}"),
         };
 
